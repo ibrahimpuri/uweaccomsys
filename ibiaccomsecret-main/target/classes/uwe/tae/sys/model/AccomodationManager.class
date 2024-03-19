@@ -1,0 +1,51 @@
+package uwe.tae.sys.model;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class AccommodationManager {
+    private List<Accommodation> accommodations;
+
+    public AccommodationManager() {
+        this.accommodations = new ArrayList<>();
+    }
+
+    public void addAccommodation(Accommodation accommodation) {
+        this.accommodations.add(accommodation);
+    }
+
+    public boolean removeAccommodation(Accommodation accommodation) {
+        return this.accommodations.remove(accommodation);
+    }
+
+    public Accommodation findAccommodationById(String id) {
+        for (Accommodation accommodation : accommodations) {
+            if (accommodation.getId().equals(id)) {
+                return accommodation;
+            }
+        }
+        return null; // or throw an exception if preferred
+    }
+
+    public List<Accommodation> findAccommodationsByHallName(String hallName) {
+        return accommodations.stream()
+                .filter(accommodation -> accommodation.getHallName().equalsIgnoreCase(hallName))
+                .collect(Collectors.toList());
+    }
+
+    // Method to update accommodation details
+    public boolean updateAccommodation(Accommodation updatedAccommodation) {
+        for (int i = 0; i < accommodations.size(); i++) {
+            if (accommodations.get(i).getId().equals(updatedAccommodation.getId())) {
+                accommodations.set(i, updatedAccommodation);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public List<Accommodation> getAllAccommodations() {
+        return new ArrayList<>(accommodations);
+    }
+}
