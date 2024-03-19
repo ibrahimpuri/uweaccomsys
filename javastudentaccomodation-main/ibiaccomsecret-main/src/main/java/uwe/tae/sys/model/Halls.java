@@ -4,15 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Halls {
-    private List<Halls> halls;
     private String hallName;
-    private List<Accommodation> hallAccommodations;
+    private List<Accommodation> hallsAccommodations;
 
-    public Hall(String hallName) {
+    public Halls(String hallName) { // Constructor name corrected
         this.hallName = hallName;
-        this.hallAccommodations = new ArrayList<>();
+        this.hallsAccommodations = new ArrayList<>();
     }
-
 
     public String getName() {
         return hallName;
@@ -23,6 +21,6 @@ public class Halls {
     }
 
     public List<Accommodation> getHallAccommodations() {
-        return Accommodations;
+        return hallsAccommodations; // Corrected to return the proper field
     }
 }
