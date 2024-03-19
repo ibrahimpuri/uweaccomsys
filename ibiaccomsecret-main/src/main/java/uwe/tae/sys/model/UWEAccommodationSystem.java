@@ -17,9 +17,4 @@ public class UWEAccommodationSystem {
     private UWEAccommodationSystem() {
 	this.halls = new ArrayList<>();
     }
-
-    public Halls getHalls() {
-        return List<Halls> halls;
-    }
-
 }
