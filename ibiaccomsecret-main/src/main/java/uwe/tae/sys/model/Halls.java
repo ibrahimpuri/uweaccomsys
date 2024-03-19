@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Halls {
     private String hallName;
-    private List<Accommodation> hallAccommodations;
+    private List<Accommodation> hallsAccommodations;
 
     public Halls(String hallName) { // Constructor name corrected
         this.hallName = hallName;
-        this.hallAccommodations = new ArrayList<>();
+        this.hallsAccommodations = new ArrayList<>();
     }
 
     public String getName() {
@@ -21,7 +21,6 @@ public class Halls {
     }
 
     public List<Accommodation> getHallAccommodations() {
-        return hallAccommodations; // Corrected to return the proper field
+        return hallsAccommodations; // Corrected to return the proper field
     }
 }
-
